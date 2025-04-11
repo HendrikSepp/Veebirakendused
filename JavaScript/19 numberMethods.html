@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="stringed"></p>
+
+    <p id="exponented"></p>
+
+    <p id="valued"></p>
+
+    <p id="parsed"></p>
+</body>
+<script>
+    let z = 123;
+
+    document.getElementById("stringed").innerHTML = z.toString() + "<br>" + (123).toString() + 
+    "<br>" + (100 + 23).toString();
+
+    let y = 4.567;
+    document.getElementById("exponented").innerHTML = y.toExponential() + "<br>" +
+    y.toExponential(2) + "<br>" +
+    y.toExponential(4) + "<br>" +
+    y.toExponential(6);
+
+    //tagastab numbrilise väärtuse
+    document.getElementById("valued").innerHTML = z.valueOf() + "<br>" + (123).valueOf() + "<br>" +
+    (100 + 23).valueOf();
+
+    document.getElementById("parsed").innerHTML = parseInt("100 years") + "<br>" +
+    parseInt("years 100");
+
+</script>
+</html>
