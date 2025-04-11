@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="human"></p>
+
+    <p id="salad"></p>
+
+    <p id="fruitBasket"></p>
+
+    <p id="kadri"></p>
+
+    <p id="kadri2"></p>
+
+</body>
+
+<script>
+
+        const person = {
+            firstName:"Heli", 
+            lastName:"Kopter", 
+            age: 40
+        };
+
+        //kasutame loopi
+        let text = "";
+        for (let x in person) {
+            text += person[x] + " ";
+        };
+
+        document.getElementById("human").innerHTML = text;
+
+        const fruits = {
+            1:"apple", 
+            2:"banana", 
+            3:"kiwi"
+        };
+
+        let loop = "";
+        for (let y in fruits) {
+            loop += fruits[y] + " ";
+        };
+
+        document.getElementById("salad").innerHTML = loop;
+
+        const fruits1 = {Apple:100, Oranges:1000, Pineapple:450};
+
+        let loop1 = "";
+        for (let [fruit, amount] of Object.entries(fruits1)) {
+            loop1+= fruit + ": " + amount + "<br>";
+        }
+        document.getElementById("fruitBasket").innerHTML = loop1;
+
+        const person1 = {
+            firstName:"Kadri",
+            lastName:"Org",
+            age: 20
+        };
+
+        let text1 = "";
+        for (let [type, info] of Object.entries(person1)) {
+            text1 += "\"" + type + "\"" + ":" + "\"" + info + "\"" + ", ";
+        };
+
+        document.getElementById("kadri").innerHTML = text1;
+
+        document.getElementById("kadri2").innerHTML = JSON.stringify(person1);
+
+</script>
+</html>

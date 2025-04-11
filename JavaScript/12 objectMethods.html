@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<p id="human"></p>
+
+<p id="human2"></p>
+
+</body>
+
+<script>
+
+    const person = {
+            firstName:"Heli", 
+            lastName:"Kopter", 
+            age: 40
+        };
+
+    person.name = function() {
+        return (this.firstName + " " + this.lastName).toUpperCase();
+        //toLowercase, slice, split, length, charAt, repeat, 
+    };
+
+    document.getElementById("human").innerHTML = 
+    "My name is " + person.name();
+
+    person.name2 = function() {
+        return (this.firstName + " " + this.lastName).toLowerCase();
+    };
+
+    document.getElementById("human2").innerHTML = 
+    "My name is " + person.name2();
+
+</script>
+</html>
