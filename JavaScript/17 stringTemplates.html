@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="hello"></p>
+
+    <p id="loopFor"></p>
+
+</body>
+<script>
+    let firstName = "Kadri";
+    let lastName = "Org";
+
+    let text = `tere tulemast, ${firstName} ${lastName}!`;
+
+    document.getElementById("hello").innerHTML = text
+
+    let head = "Some Template text";
+    let array = ["template text", "typescript", "browser"];
+
+    let html = `<h1>${head}</h1><ul>`;
+
+    // let loop = ""
+    // for (let x in array) {
+    //     loop += array[x] + "<br>";
+    // }
+
+    for (const x of array) {
+        html += `<h1>${x}</h1>`
+    }
+
+    html += `<ul>`
+    document.getElementById("loopFor").innerHTML = html;
+</script>
+</html>

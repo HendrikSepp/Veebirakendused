@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p> charAt näitab sulgudes olevat tähte</p>
+    <p id="hello"></p>
+    
+    <p id="hello1"></p>
+    
+    <p id="hello2"></p>
+    
+    <p id="hello3"></p>
+    
+    <p id="hello4"></p>
+    
+    <p id="hello5"></p>
+    
+</body>
+
+<script>
+    var text = "HELLO WORLD";
+    document.getElementById("hello").innerHTML = text.charAt(3);
+
+    var text1 = "HELLO WORLD";
+    document.getElementById("hello1").innerHTML = text1.charCodeAt(3);
+    
+    var text2 = "          HELLO WORLD";
+    var text2A = text2.trimStart();
+    document.getElementById("hello2").innerHTML = text2.length + " trimmed to " + text2A.length;
+
+    let text3 = "5";
+    text3 = text3.padStart(4, "0");
+    document.getElementById("hello3").innerHTML = text3
+
+    var text4 = "HELLO WORLD ";
+    document.getElementById("hello4").innerHTML = text4.repeat(3);
+
+    let text5 = "Some text over here";
+    const someArray = text5.match("ext")
+    document.getElementById("hello5").innerHTML = someArray.length + " " + someArray;
+
+</script>
+
+</html>
