@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="numbersOver"></p>
+
+    <p>-----------------------------------</p>
+    <p>massiivi all olevate numbrite kogusumma:</p>
+    <p id="numbersSum"></p>
+    
+    <p>-----------------------------------</p>
+    <p>every() funktsiooniga kõik üle 18 on false:</p>
+    <p id="allOver18"></p>
+
+</body>
+
+<script>
+    const numbers = [45, 6, 2, 17, 34];
+    const overNumber18 = numbers.filter(numberOver);
+
+    document.getElementById("numbersOver").innerHTML = overNumber18.join(", ");
+
+    function numberOver(value, index, array) {
+        return value > 18;
+    }
+
+    let sum = numbers.reduce(arraySum);
+    
+    document.getElementById("numbersSum").innerHTML = sum;
+
+    function arraySum(total, value, index, array) {
+        return total + value;
+    }
+
+    let allOverNumber18 = numbers.every(allOverNumber);
+
+    document.getElementById("allOver18").innerHTML = "Kõik üle 18 on " + allOverNumber18;
+
+    function allOverNumber(value, index, array) {
+        return value > 18;
+    }
+</script>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="daysReverse"></p>
+    <p>-----------------------------------</p>
+
+    <p>numbrid tuleb õigesse järjekorda saada</p>
+    <p id="numbersUnsorted"></p>
+
+    <p>Sorteeritud:</p>
+    <p id="numbersSorted"></p>
+
+    <p>-----------------------------------</p>
+    <p>Randomized:</p>
+    <button onclick="sortRandomNumbers()">Push me</button>
+    <p id="numbersRandom"></p>
+
+    <p>-----------------------------------</p>
+    <p>väikseim number:</p>
+    <p id="findSmallest"></p>
+
+    <p>-----------------------------------</p>
+    <p>Autod tähestiku järjekorras:</p>
+    <button onclick="sortCars()">Push me</button>
+    <p id="carsSorting"></p>
+</body>
+<script>
+    const days = ["Monday", "Tuesday", "Wednesday", "Thursday"];
+    document.getElementById("daysReverse").innerHTML = days.reverse().join(", ");
+
+    const numbers = [32, 4, 100, 9, 49, 25, 87, 99];
+    document.getElementById("numbersUnsorted").innerHTML = numbers.join(", ");
+    
+    numbers.sort(function(a, b){return a - b});
+    document.getElementById("numbersSorted").innerHTML = numbers.join(", ");
+
+    function sortRandomNumbers() {
+        numbers.sort(function(){return 0.5 - Math.random()});
+        document.getElementById("numbersRandom").innerHTML = numbers.join(", ");
+    }
+
+    document.getElementById("findSmallest").innerHTML = findSmallestNumber(numbers)
+    function findSmallestNumber(arr) {
+        let len = arr.length;
+        let min = Infinity;
+        while (len--) {
+            if (arr[len] < min ) {
+                min =arr[len];
+            }
+        }
+        return min;
+    }
+
+    const cars = [
+        {type:"Volvo", year:2015},
+        {type:"Saab", year:2002},
+        {type:"BMW", year:2009}
+    ]
+
+    function sortCars() {
+        cars.sort(function(a, b){
+            let x = a.type.toLowerCase();
+            let y = b.type.toLowerCase();
+            if (x < y) {return -1;}
+            if (x > y) {return 1;}
+            return 0;
+        });
+        displayCars();
+    }
+
+    function displayCars() {
+        document.getElementById("carsSorting").innerHTML =
+        cars[0].type + " " + cars[0].year + "<br>" +
+        cars[1].type + " " + cars[1].year + "<br>" +
+        cars[2].type + " " + cars[2].year; 
+    }
+
+</script>
+</html>
