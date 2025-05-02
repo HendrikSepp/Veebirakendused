@@ -16,6 +16,13 @@
     <p>every() funktsiooniga kõik üle 18 on false:</p>
     <p id="allOver18"></p>
 
+    <p>-----------------------------------</p>
+    <p>Kasutada keys() funktsiooni, for loopi</p>
+    <p id="carKeys"></p>
+
+    <p>-----------------------------------</p>
+    <p id="daysWith"></p>
+
 </body>
 
 <script>
@@ -38,10 +45,25 @@
 
     let allOverNumber18 = numbers.every(allOverNumber);
 
-    document.getElementById("allOver18").innerHTML = "Kõik üle 18 on " + allOverNumber18;
+    document.getElementById("allOver18").innerHTML = "kõik üle 18 on " + allOverNumber18;
 
     function allOverNumber(value, index, array) {
         return value > 18;
     }
+
+    const cars = ["Audi", "BMW", "Saab", "Volkswagen"];
+    const carsKeys = cars.keys();
+
+    let text = "";
+    for (let x of carsKeys) {
+        text += x + "<br>";
+    }
+    
+    document.getElementById("carKeys").innerHTML = text;
+
+    const days = ["Monday", "Tuesday", "Wed", "Thursday"];
+    const myDays = days.with(2, "Wednesday");
+
+    document.getElementById("daysWith").innerHTML = myDays.join(", ");
 </script>
 </html>
