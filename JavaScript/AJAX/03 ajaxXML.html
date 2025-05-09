@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="ajaxRequest">
+    <button type="button" onclick="loadText()">Click me</button>
+</body>
+<script>
+    function loadText() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+
+            const names = this.responseText.split("\n");
+    
+            let output = '';
+    
+            for (let i = 0; i < names.length; i++) {
+                output += names[i].trim() + "<br>";
+            }
+    
+            document.getElementById("ajaxRequest").innerHTML = output;
+        }
+        xhttp.open("GET", "ajaxInfo.xml", true);
+        xhttp.send();
+    }
+    </script>
+</html>

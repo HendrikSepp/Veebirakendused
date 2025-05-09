@@ -1,0 +1,3 @@
+AJAX ei ole programmeermiskeel <br>
+AJAX on tehnoloogia, et saada ligi veebiserverile <br>
+AJAX tähendab asünkroonne JS ja XML <br>
